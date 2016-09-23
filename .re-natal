@@ -7,41 +7,11 @@
     "dev": "env/dev",
     "prod": "env/prod"
   },
-  "modules": [
-    "SwipeableListView",
-    "SwipeableQuickActions",
-    "SwipeableQuickActionButton",
-    "react-native-fbsdk",
-    "react-native-webrtc",
-    "apsl-react-native-button",
-    "react-native-vector-icons/FontAwesome",
-    "react-native-vector-icons/MaterialIcons",
-    "react-native-linear-gradient",
-    "realm",
-    "realm/react-native",
-    "moment",
-    "react-native-image-picker",
-    "react-native-image-resizer",
-    "react-native-aws3",
-    "react-native-push-notification",
-    "react-native-google-signin",
-    "react-native-modalbox",
-    "react-native-code-push",
-    "react-native-fs",
-    "react-native-parsed-text",
-    "react-native-app-intro",
-    "react-native-incall-manager",
-    "react-native-gifted-chat",
-    "react-native-wechat",
-    "react-native-device-info",
-    "react-native-image-progress",
-    "react-native-progress",
-    "react-native-drawer",
-    "react-native-action-button",
-    "react-native-dialogs",
-    "react-native-material-kit"
-  ],
   "imageDirs": [
-    "images"
+    "assets"
+  ],
+  "modules": [
+    "@exponent/ex-navigation",
+    "@exponent/vector-icons"
   ]
 }

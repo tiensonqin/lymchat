@@ -1,6 +1,6 @@
  (ns ^:figwheel-no-load env.android.main
   (:require [reagent.core :as r]
-            [lymchat.android.core :as core]
+            [lymchat.main :as core]
             [figwheel.client :as figwheel :include-macros true]))
 
  (enable-console-print!)
