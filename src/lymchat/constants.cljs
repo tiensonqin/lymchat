@@ -30,4 +30,22 @@
   {:container {:flex 1
                :backgroundColor "#FFF"}
    :statusBarUnderlay {:height 24
-                       :backgroundColor "rgba(0,0,0,0.2)"}})
+                       :backgroundColor "rgba(0,0,0,0.2)"}
+   :exponent-button {:flex 1
+                     :align-items "center"
+                     :justify-content "center"
+                     :margin-right 15
+                     :padding-top 2}
+   :home {:container {:backgroundColor "#fff"}}
+   :text-input {:width (- (:width layouts) 20)
+                :borderRadius 2
+                :borderWidth 1
+                :borderColor "#eee"
+                :fontSize 15
+                :padding 5
+                :height 40}
+   :button {:paddingHorizontal 20
+            :paddingVertical 15
+            :marginRight 10
+            :backgroundColor tintColor
+            :borderRadius 5}})

@@ -10,26 +10,40 @@
 (def view (r/adapt-react-class (.-View ReactNative)))
 (def image (r/adapt-react-class (.-Image ReactNative)))
 (def touchable-highlight (r/adapt-react-class (.-TouchableHighlight ReactNative)))
+(def touchable-opacity (r/adapt-react-class (.-TouchableOpacity ReactNative)))
+(def TouchableNativeFeedback (.-TouchableNativeFeedback ReactNative))
+(def touchable-native-feedback (r/adapt-react-class TouchableNativeFeedback))
 (def dimensions (.-Dimensions ReactNative))
 (def Platform (.-Platform ReactNative))
-(def status-bar (r/adapt-react-class (.-StatusBar ReactNative)))
+(def StatusBar (.-StatusBar ReactNative))
+(def status-bar (r/adapt-react-class StatusBar))
 (def activity-indicator (r/adapt-react-class (.-ActivityIndicator ReactNative)))
 (def Alert (.-Alert ReactNative))
-(def DatePickerAndroid (.-DatePickerAndroid ReactNative))
 (def DrawerLayoutAndroid (.-DrawerLayoutAndroid ReactNative))
+(def drawer-layout-android (r/adapt-react-class DrawerLayoutAndroid))
 (def Picker (.-Picker ReactNative))
+(def picker (r/adapt-react-class Picker))
+(def picker-item (r/adapt-react-class Picker.Item))
 (def ProgressBarAndroid (.-ProgressBarAndroid ReactNative))
+(def progress-bar-android (r/adapt-react-class ProgressBarAndroid))
 (def RefreshControl (.-RefreshControl ReactNative))
+(def refresh-control (r/adapt-react-class RefreshControl))
 (def Slider (.-Slider ReactNative))
+(def slider (r/adapt-react-class Slider))
 (def Switch (.-Switch ReactNative))
+(def switch (r/adapt-react-class Switch))
 (def ListView (.-ListView ReactNative))
+(def list-view (r/adapt-react-class ListView))
 (def ScrollView (.-ScrollView ReactNative))
+(def scroll-view (r/adapt-react-class ScrollView))
 (def TextInput (.-TextInput ReactNative))
+(def text-input (r/adapt-react-class TextInput))
+(def DatePickerAndroid (.-DatePickerAndroid ReactNative))
 (def TimePickerAndroid (.-TimePickerAndroid ReactNative))
-(def TouchableOpacity (.-TouchableOpacity ReactNative))
-(def TouchableHighlight (.-TouchableHighlight ReactNative))
-(def TouchableNativeFeedback (.-TouchableNativeFeedback ReactNative))
 (def WebView (.-WebView ReactNative))
+(def webview (r/adapt-react-class WebView))
+
+(def touchable-bounce (r/adapt-react-class (js/require "react-native/Libraries/Components/Touchable/TouchableBounce")))
 
 ;; Exponentjs
 (def exponent (js/require "exponent"))
@@ -67,6 +81,26 @@
 ;; (def vector-icons (js/require "@exponent/vector-icons"))
 
 ;; helper
+
+(defn ->ds
+  ([]
+   (->ds {:rowHasChanged (partial not=)
+          :sectionHeaderHasChanged (partial not=)}))
+  ([options]
+   (let [ds (.-DataSource ListView)]
+     (new ds (clj->js options)))))
+
+(defn clone-ds
+  [ds data]
+  (.cloneWithRowsAndSections ds (clj->js data)))
+
+(defn refresh
+  [value on-refresh-cb]
+  (r/as-element
+   [refresh-control
+    {:refreshing value
+     :onRefresh on-refresh-cb}]))
+
 (defn android?
   []
   (= "android" Platform.OS))
