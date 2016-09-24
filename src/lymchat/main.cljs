@@ -31,7 +31,8 @@
         (if @app-ready?
           [m/view {:style (:container lc/styles)}
            [m/navigation-provider {:router router/router}
-            [m/stack-navigation {:initialRoute (.getRoute router/router "home")}]]
+            [m/stack-navigation {:id "root"
+                                 :initialRoute (.getRoute router/router "home")}]]
            [status-bar-cp]]
 
           [m/app-loading])))}))

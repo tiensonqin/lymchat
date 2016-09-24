@@ -28,7 +28,8 @@
 
 (def styles
   {:container {:flex 1
-               :backgroundColor "#FFF"}
+               :backgroundColor "#FFF"
+               :margin-top 24}
    :statusBarUnderlay {:height 24
                        :backgroundColor "rgba(0,0,0,0.2)"}
    :exponent-button {:flex 1

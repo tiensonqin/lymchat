@@ -67,13 +67,14 @@
             (.alert m/Alert
                     "Alert Title"
                     "My Alert Msg"
-                    #js [{:text "Ask me later"
-                          :onPress (fn [] (prn "Ask me later pressed"))}
-                         {:text "Cancel"
-                          :onPress (fn [] (prn "Cancel Pressed"))
-                          :style "cancel"}
-                         {:text "Ok"
-                          :onPress (fn [] (prn "Ok pressed"))}]))]
+                    (clj->js
+                     [{:text "Ask me later"
+                       :onPress (fn [] (prn "Ask me later pressed"))}
+                      {:text "Cancel"
+                       :onPress (fn [] (prn "Cancel Pressed"))
+                       :style "cancel"}
+                      {:text "Ok"
+                       :onPress (fn [] (prn "Ok pressed"))}])))]
     [m/view {:style {:flex-direction "row"
                      :padding 10}}
      [button show-alert
@@ -176,13 +177,15 @@
              (if (= 1 @progress)
                0
                (min 1 (+ 0.01 @progress))))
-     (progress-loop))
+     (progress-loop progress))
    (* 2 17)))
 
 (defn progress-bar-example-cp [initial-progress tint-color]
   (let [progress (r/atom initial-progress)]
+
     (r/create-class
-     {:component-did-mount (fn [] (progress-loop progress))
+     {:component-did-mount (fn []
+                             (progress-loop progress))
 
       :reagent-render
       (fn []
@@ -298,7 +301,7 @@
   [m/webview {:style {:width (:width lc/layouts)
                       :height 250}
               :source {:html
-         "<h2>You can always use a WebView if you need to!</h2>
+                       "<h2>You can always use a WebView if you need to!</h2>
           <p>
             <h4>But don't the other components above seem like better building blocks for most of your UI?</h4>
             <input type=\"text\" placeholder=\"Disagree? why?\"></input>
@@ -313,55 +316,58 @@
   (let [refreshing? (r/atom false)
         ds (m/clone-ds (m/->ds {:rowHasChanged #(not= %1 %2)
                                 :sectionHeaderHasChanged #(not= %1 %2)})
-                       {"Vertical ScrollView, RefreshControl" [refresh-control-cp]
-                        "DrawerLayoutAndroid" [drawer-layout-cp]
-                        "ActivityIndicator" [activity-indicator-cp]
-                        "Alert" [alert-cp]
-                        "DatePickerAndroid" [date-picker-cp]
-                        "TimerPickerAndroid" [time-picker-cp]
-                        "Horizontal ScrollView" [horizontal-scrollview-cp]
-                        "ImagePicker" [image-picker-cp]
-                        "Picker" [picker-cp]
-                        ;; "ProgressBar" [progress-bar-cp]
-                        "Slider" [slider-cp]
-                        "StatusBar" [status-bar-cp]
-                        "Switch" [switch-cp]
-                        "Text" [text-cp]
-                        "TextInput" [textinput-cp]
-                        "Touchables" [touchables-cp]
-                        "WebView" [webview-cp]
-                        })]
-    (r/create-class
-     {:route {:navigationBar {:title "Native components Android"
-                              :renderRight exponent-button}}
-      :reagent-render
-      (fn []
-        (let [this (r/current-component)
-              nav (r/props this)
-              container-style (get-in lc/styles [:home :container])]
-          (dispatch [:nav/set-nav nav])
+                       (array-map "Vertical ScrollView, RefreshControl" [refresh-control-cp]
+                                  "DrawerLayoutAndroid" [drawer-layout-cp]
+                                  "ActivityIndicator" [activity-indicator-cp]
+                                  "Alert" [alert-cp]
+                                  "DatePickerAndroid" [date-picker-cp]
+                                  "TimerPickerAndroid" [time-picker-cp]
+                                  "Horizontal ScrollView" [horizontal-scrollview-cp]
+                                  "ImagePicker" [image-picker-cp]
+                                  "Picker" [picker-cp]
+                                  "ProgressBar" [progress-bar-cp]
+                                  "Slider" [slider-cp]
+                                  "StatusBar" [status-bar-cp]
+                                  "Switch" [switch-cp]
+                                  "Text" [text-cp]
+                                  "TextInput" [textinput-cp]
+                                  "Touchables" [touchables-cp]
+                                  "WebView" [webview-cp]))]
+    (let [c (r/create-class
+             {:reagent-render
+              (fn []
+                (let [this (r/current-component)
+                      nav (r/props this)
+                      container-style (get-in lc/styles [:home :container])]
+                  (dispatch [:nav/set-nav nav])
 
-          [m/drawer-layout-android
-           {:drawerWidth 300
-            :drawerPosition m/DrawerLayoutAndroid.positions.Left
-            :renderNavigationView (fn []
-                                    (r/as-element [navigation-view-cp]))}
+                  [m/drawer-layout-android
+                   {:drawerWidth 300
+                    :drawerPosition m/DrawerLayoutAndroid.positions.Left
+                    :renderNavigationView (fn []
+                                            (r/as-element [navigation-view-cp]))}
 
-           [m/list-view
-            {:keyboardShouldPersistTaps true
-             :keyboardDismissMode "on-drag"
-             :refreshControl (m/refresh @refreshing?
-                                        (fn []
-                                          (prn "refreshing...")))
-             :style container-style
-             :contentContainerStyle container-style
-             :dataSource ds
-             :renderRow (fn [row-fn]
-                          (r/as-element [row-fn]))
-             :renderSectionHeader (fn [_ section-id]
-                                    (r/as-element
-                                     [m/view {:style
-                                              {:background-color "rgba(245,245,245,1)"
-                                               :paddingVertical 5
-                                               :paddingHorizontal 10}}
-                                      [m/text section-id]]))}]]))})))
+                   [m/list-view
+                    {:keyboardShouldPersistTaps true
+                     :keyboardDismissMode "on-drag"
+                     :refreshControl (m/refresh @refreshing?
+                                                (fn []
+                                                  (prn "refreshing...")))
+                     :style container-style
+                     :contentContainerStyle container-style
+                     :dataSource ds
+                     :renderRow (fn [row-fn]
+                                  (r/as-element [row-fn]))
+                     :renderSectionHeader (fn [_ section-id]
+                                            (r/as-element
+                                             [m/view {:style
+                                                      {:background-color "rgba(245,245,245,1)"
+                                                       :paddingVertical 5
+                                                       :paddingHorizontal 10}}
+                                              [m/text section-id]]))}]]))})]
+      (aset c
+            "route"
+            (clj->js
+             {:navigationBar {:title "Native components Android"
+                              :renderRight (fn [] (r/as-element [exponent-button]))}}))
+      c)))
