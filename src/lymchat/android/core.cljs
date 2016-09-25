@@ -32,8 +32,7 @@
       (let [app-ready? (subscribe [:app-ready?])]
         (if @app-ready?
           [m/view {:style {:flex 1
-                           :background-color "#FFF"
-                           :margin-top 24}}
+                           :background-color "#FFF"}}
            [m/navigation-provider {:router router/router}
             [m/stack-navigation {:id "root"
                                  :initialRoute (.getRoute router/router "home")}]]

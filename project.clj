@@ -16,7 +16,10 @@
                  [com.andrewmcveigh/cljs-time "0.4.0"]]
   :plugins [[lein-cljsbuild "1.1.1"]
             [lein-figwheel "0.5.4-4"]]
-  :clean-targets ["target/" "index.ios.js" "index.android.js"]
+  :clean-targets ["target/"
+                  ;; "index.ios.js"
+                  ;; "index.android.js"
+                  ]
   :aliases {"prod-build" ^{:doc "Recompile code with prod profile."}
             ["do" "clean"
              ["with-profile" "prod" "cljsbuild" "once" "ios"]

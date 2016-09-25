@@ -236,8 +236,8 @@
                            :on-press (fn [] (prn "opacity clicked"))}
       (text-cp "Opacity!")]
 
-     [touchable-bounce {:style (:button lc/styles)
-                        :on-press (fn [] (prn "bounch clicked"))}
+     [m/touchable-bounce {:style (:button lc/styles)
+                          :on-press (fn [] (prn "bounce clicked"))}
       (text-cp "Bounce!")]]))
 
 (defn webview-cp []

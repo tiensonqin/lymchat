@@ -38,8 +38,8 @@
 
 (defn blur-view-cp []
   (let [animated-blur-view (r/adapt-react-class
-                            (.createAnimatedComponent m/Animated m/blur-view))
-        opacity (atom (Animated.value. 0))]
+                            (.createAnimatedComponent m/Animated m/Components.BlurView))
+        opacity (r/atom (m/animated-value. 0))]
     (r/create-class
      {:component-did-mount
       (fn []
@@ -54,11 +54,17 @@
                             :padding-top 60}}
             [m/image {:style {:width 180
                               :height 180}
-                      :source uri}
-             [animated-blur-view {:tintEffect "default"
-                                  :style (merge
-                                          m/StyleSheet.absoluteFill
-                                          {:opacity @opacity})}]]]]))})))
+                      :source {:uri uri}}]
+            ;; todo Stylesheet.absoluteFill not works here
+            [animated-blur-view {:tintEffect "default"
+                                 :style (merge
+                                         {:position "absolute"
+                                          :left 0
+                                          :right 0
+                                          :top 0
+                                          :bottom 0}
+                                         {:opacity @opacity})}]]]))}))
+  )
 
 (defn constant-cp [name]
   [m/view {:style {:flex-direction "row"
@@ -116,18 +122,18 @@
          (if (= type "cancel")
            (prn "cancel")
            (.alert m/Alert "Logged in!"
-                          (js/JSON.stringify result)
-                          (clj->js
-                           [{:text "Ok!"
-                             :onPress (fn []
-                                        (prn {:type type
-                                              :token token}))}]))))
+                   (js/JSON.stringify result)
+                   (clj->js
+                    [{:text "Ok!"
+                      :onPress (fn []
+                                 (prn {:type type
+                                       :token token}))}]))))
        (catch js/Error e
          (.alert m/Alert "Error!"
-                        (aget e "message")
-                        (clj->js
-                         [{:text "Ok!"
-                           :onPress (fn [])}])))))))
+                 (aget e "message")
+                 (clj->js
+                  [{:text "Ok!"
+                    :onPress (fn [])}])))))))
 
 (defn facebook-cp []
   (let [permissions ["public_profile", "email", "user_friends"]]
@@ -335,7 +341,7 @@
                           "Video" [video-cp])
 
                          (array-map
-                          "BlurView" blur-view-cp
+                          "BlurView" [blur-view-cp]
                           "Constants" [constants-cp]
                           "Contacts" [contacts-cp]
                           "Facebook" [facebook-cp]
