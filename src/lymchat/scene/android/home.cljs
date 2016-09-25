@@ -1,4 +1,4 @@
-(ns lymchat.scene.home
+(ns lymchat.scene.android.home
   (:require-macros [cljs.core.async.macros :refer [go]])
   (:require [reagent.core :as r]
             [re-frame.core :refer [subscribe dispatch dispatch-sync]]
@@ -314,8 +314,7 @@
 (defn home-scene
   []
   (let [refreshing? (r/atom false)
-        ds (m/clone-ds (m/->ds {:rowHasChanged #(not= %1 %2)
-                                :sectionHeaderHasChanged #(not= %1 %2)})
+        ds (m/clone-ds (m/->ds)
                        (array-map "Vertical ScrollView, RefreshControl" [refresh-control-cp]
                                   "DrawerLayoutAndroid" [drawer-layout-cp]
                                   "ActivityIndicator" [activity-indicator-cp]
@@ -353,7 +352,8 @@
                      :refreshControl (m/refresh @refreshing?
                                                 (fn []
                                                   (prn "refreshing...")))
-                     :style container-style
+                     :style {:flex 1
+                             :backgroundColor "#FFF"}
                      :contentContainerStyle container-style
                      :dataSource ds
                      :renderRow (fn [row-fn]

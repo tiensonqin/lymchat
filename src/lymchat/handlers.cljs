@@ -3,8 +3,7 @@
    [reagent.core :as r]
    [re-frame.core :refer [register-handler after dispatch]]
    [schema.core :as s :include-macros true]
-   [lymchat.db :refer [app-db]]
-   [lymchat.navigation.router :as router]))
+   [lymchat.db :refer [app-db]]))
 
 ;; -- Middleware ------------------------------------------------------------
 ;;
@@ -30,5 +29,14 @@
  (fn [db [_ route]]
    (when-let [nav (:nav db)]
      (.push (:navigator nav)
-            (.getRoute router/router (:key route))))
+            (-> (:navigation nav)
+                (aget "_router")
+                (.getRoute (:key route)))))
+   db))
+
+(register-handler
+ :nav/show-local-alert
+ (fn [db [_ text style]]
+   (when-let [nav (:nav db)]
+     (.showLocalAlert (:navigator nav) text (clj->js style)))
    db))

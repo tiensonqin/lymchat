@@ -1,6 +1,6 @@
-(ns lymchat.navigation.router
+(ns lymchat.ios.router
   (:require [lymchat.utils.module :as m]
-            [lymchat.scene.home :refer [home-scene]]
+            [lymchat.scene.ios.home :refer [home-scene]]
             [lymchat.scene.exponent :refer [exponent-scene]]))
 
 (def router (m/create-router

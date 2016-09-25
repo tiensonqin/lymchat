@@ -1,8 +1,8 @@
 {
   "exponentServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 18313,
-  "exponentServerNgrokUrl": "https://qz-vzd.tiensonqin.lymchat.exp.direct",
-  "packagerNgrokUrl": "https://packager.qz-vzd.tiensonqin.lymchat.exp.direct",
-  "ngrokPid": 18328
+  "packagerPid": 27044,
+  "exponentServerNgrokUrl": "https://kf-vpg.tiensonqin.lymchat.exp.direct",
+  "packagerNgrokUrl": "https://packager.kf-vpg.tiensonqin.lymchat.exp.direct",
+  "ngrokPid": 27059
 }

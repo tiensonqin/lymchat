@@ -1,12 +1,14 @@
-(ns lymchat.main
+(ns lymchat.android.core
   (:require [reagent.core :as r]
             [re-frame.core :refer [subscribe dispatch dispatch-sync]]
             [lymchat.handlers]
             [lymchat.subs]
             [lymchat.utils.module :as m]
             [lymchat.utils.assets :as assets]
-            [lymchat.navigation.router :as router]
+            [lymchat.android.router :as router]
             [lymchat.constants :as lc]))
+
+(aset js/console "disableYellowBox" true)
 
 (defn status-bar-cp []
   (cond
@@ -29,7 +31,9 @@
     (fn []
       (let [app-ready? (subscribe [:app-ready?])]
         (if @app-ready?
-          [m/view {:style (:container lc/styles)}
+          [m/view {:style {:flex 1
+                           :background-color "#FFF"
+                           :margin-top 24}}
            [m/navigation-provider {:router router/router}
             [m/stack-navigation {:id "root"
                                  :initialRoute (.getRoute router/router "home")}]]

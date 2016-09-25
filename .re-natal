@@ -12,7 +12,7 @@
   ],
   "modules": [
     "@exponent/ex-navigation",
-    "@exponent/vector-icons",
+    "@exponent/vector-icons/MaterialIcons",
     "react-native/Libraries/Components/Touchable/TouchableBounce",
   ]
 }

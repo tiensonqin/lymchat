@@ -42,8 +42,23 @@
 (def TimePickerAndroid (.-TimePickerAndroid ReactNative))
 (def WebView (.-WebView ReactNative))
 (def webview (r/adapt-react-class WebView))
-
+(def Animated (.-Animated ReactNative))
+(def StyleSheet (.-StyleSheet ReactNative))
+(def DeviceEventEmitter (.-DeviceEventEmitter ReactNative))
+(def NativeModules (.-NativeModules ReactNative))
 (def touchable-bounce (r/adapt-react-class (js/require "react-native/Libraries/Components/Touchable/TouchableBounce")))
+
+;; ios
+(def ActionSheetIOS (.-ActionSheetIOS ReactNative))
+(def AlertIOS (.-AlertIOS ReactNative))
+(def DatePickerIOS (.-DatePickerIOS ReactNative))
+(def date-picker-ios (r/adapt-react-class DatePickerIOS))
+(def MapView (.-MapView ReactNative))
+(def map-view (r/adapt-react-class MapView))
+(def ProgressViewIOS (.-ProgressViewIOS ReactNative))
+(def progress-view-ios (r/adapt-react-class ProgressViewIOS))
+(def SegmentedControlIOS (.-SegmentedControlIOS ReactNative))
+(def segmented-control-ios (r/adapt-react-class SegmentedControlIOS))
 
 ;; Exponentjs
 (def exponent (js/require "exponent"))
@@ -52,6 +67,9 @@
 (def Asset (aget exponent "Asset"))
 (def Components (aget exponent "Components"))
 (def app-loading (r/adapt-react-class Components.AppLoading))
+(def blur-view Components.BlurView)
+(def linear-gradient (r/adapt-react-class Components.LinearGradient))
+(def video (r/adapt-react-class Components.Video))
 (def Constants (aget exponent "Constants"))
 (def Contacts (aget exponent "Contacts"))
 (def Crypto (aget exponent "Crypto"))
@@ -77,8 +95,11 @@
 (def StackNavigation (aget ex-navigation "StackNavigation"))
 (def stack-navigation (r/adapt-react-class StackNavigation))
 
+;; victory-chart
+;; (def VictoryChart (js/require "victory-chart-native"))
+
 ;; vector-icons
-;; (def vector-icons (js/require "@exponent/vector-icons"))
+(def material-icons (r/adapt-react-class (.-default (js/require "@exponent/vector-icons/MaterialIcons"))))
 
 ;; helper
 
