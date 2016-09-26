@@ -48,4 +48,9 @@
             :paddingVertical 15
             :marginRight 10
             :backgroundColor tintColor
-            :borderRadius 5}})
+            :borderRadius 5}
+   :ios-button {:paddingHorizontal 25
+                :paddingVertical 20
+                :marginRight 10
+                :backgroundColor tintColor
+                :borderRadius 5}})

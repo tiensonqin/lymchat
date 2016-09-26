@@ -273,8 +273,7 @@
                   [m/text {:style {:color "#fff"}} value])]
     [m/view {:style {:flex 1}}
      [m/view {:style {:padding 10
-                      :flex-direction "row"
-                      :flex 1}}
+                      :flex-direction "row"}}
       [m/touchable-highlight {:underlayColor "rgba(1, 1, 255, 0.9)"
                               :style (:button lc/styles)
                               :on-press (fn [] (prn "highlight clicked"))}

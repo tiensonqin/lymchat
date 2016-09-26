@@ -47,7 +47,8 @@
 (def StyleSheet (.-StyleSheet ReactNative))
 (def DeviceEventEmitter (.-DeviceEventEmitter ReactNative))
 (def NativeModules (.-NativeModules ReactNative))
-(def touchable-bounce (r/adapt-react-class (js/require "react-native/Libraries/Components/Touchable/TouchableBounce")))
+(def TouchableBounce (js/require "react-native/Libraries/Components/Touchable/TouchableBounce"))
+(def touchable-bounce (r/adapt-react-class TouchableBounce))
 
 ;; ios
 (def ActionSheetIOS (.-ActionSheetIOS ReactNative))

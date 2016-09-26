@@ -63,8 +63,7 @@
                                           :right 0
                                           :top 0
                                           :bottom 0}
-                                         {:opacity @opacity})}]]]))}))
-  )
+                                         {:opacity @opacity})}]]]))})))
 
 (defn constant-cp [name]
   [m/view {:style {:flex-direction "row"
@@ -74,7 +73,7 @@
             :style {:flex 1}}
     [m/text {:style {:fontWeight "bold"}}
      name]
-    (aget m/Constants name)]])
+    (str ": " (aget m/Constants name))]])
 
 (defn constants-cp []
   [m/view {:style {:padding 10}}

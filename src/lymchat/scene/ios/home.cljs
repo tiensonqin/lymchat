@@ -225,18 +225,17 @@
   (let [text-cp (fn [value]
                   [m/text {:style {:color "#fff"}} value])]
     [m/view {:style {:padding 10
-                     :flex-direction "row"
-                     :flex 1}}
+                     :flex-direction "row"}}
      [m/touchable-highlight {:underlayColor "rgba(1, 1, 255, 0.9)"
-                             :style (:button lc/styles)
+                             :style (:ios-button lc/styles)
                              :on-press (fn [] (prn "highlight clicked"))}
       (text-cp "Highlight!")]
 
-     [m/touchable-opacity {:style (:button lc/styles)
+     [m/touchable-opacity {:style (:ios-button lc/styles)
                            :on-press (fn [] (prn "opacity clicked"))}
       (text-cp "Opacity!")]
 
-     [m/touchable-bounce {:style (:button lc/styles)
+     [m/touchable-bounce {:style (:ios-button lc/styles)
                           :on-press (fn [] (prn "bounce clicked"))}
       (text-cp "Bounce!")]]))
 
