@@ -1,0 +1,65 @@
+[{:id 1
+  :user_id #uuid "10000000-3c59-4887-995b-cf275db86343"
+  :name "Travel"
+  :en_name "Travel"
+  :type "interest"}
+ {:id 2
+  :user_id #uuid "10000000-3c59-4887-995b-cf275db86343"
+  :name "Food"
+  :en_name "Food"
+  :type "interest"}
+ {:id 3
+  :user_id #uuid "10000000-3c59-4887-995b-cf275db86343"
+  :name "Book"
+  :en_name "Book"
+  :type "interest"}
+ {:id 4
+  :user_id #uuid "10000000-3c59-4887-995b-cf275db86343"
+  :name "Music"
+  :en_name "Music"
+  :type "interest"}
+ {:id 5
+  :user_id #uuid "10000000-3c59-4887-995b-cf275db86343"
+  :name "Movie"
+  :en_name "Movie"
+  :type "interest"}
+ {:id 6
+  :user_id #uuid "10000000-3c59-4887-995b-cf275db86343"
+  :name "Sports"
+  :en_name "Sports"
+  :type "interest"}
+ {:id 7
+  :user_id #uuid "10000000-3c59-4887-995b-cf275db86343"
+  :name "Yunnan, China"
+  :en_name "Yunnan, China"
+  :type "location"}
+ {:id 8
+  :user_id #uuid "10000000-3c59-4887-995b-cf275db86343"
+  :name "Chiang Mai, Thailand"
+  :en_name "Chiang Mai, Thailand"
+  :type "location"}
+ {:id 9
+  :user_id #uuid "10000000-3c59-4887-995b-cf275db86343"
+  :name "Bangkok, Thailand"
+  :en_name "Bangkok, Thailand"
+  :type "location"}
+ {:id 10
+  :user_id #uuid "10000000-3c59-4887-995b-cf275db86343"
+  :name "Berlin, German"
+  :en_name "Berlin, German"
+  :type "location"}
+ {:id 11
+  :user_id #uuid "10000000-3c59-4887-995b-cf275db86343"
+  :name "Spanish"
+  :en_name "Spanish"
+  :type "language"}
+ {:id 12
+  :user_id #uuid "10000000-3c59-4887-995b-cf275db86343"
+  :name "Japanese"
+  :en_name "Japanese"
+  :type "language"}
+ {:id 13
+  :user_id #uuid "10000000-3c59-4887-995b-cf275db86343"
+  :name "Chinese"
+  :en_name "Chinese"
+  :type "language"}]

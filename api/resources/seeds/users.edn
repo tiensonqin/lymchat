@@ -1,0 +1,113 @@
+[{:id #uuid "20000000-81c1-4f1a-aa22-eeb57d2eea98"
+  :name "Tim Duncan"
+  :username "tim"
+  :avatar "http://static3.businessinsider.com/image/54d11789ecad04b16d8f9527-480/tim-duncan.jpg"
+  :oauth_type "facebook"
+  :oauth_id "0001"
+  :language "English"
+  :timezone 8
+  :no_invite false
+  :block false
+  :contacts []}
+ {:id #uuid "30000000-ecf6-484c-bade-4993662742ba"
+  :name "Manu Ginobili"
+  :username "manu"
+  :avatar "http://images.performgroup.com/di/library/sporting_news/87/1c/manu-ginobili_nqbelamkt3f719ywkkj5h4v40.jpg?t=1199571342&h=600"
+  :oauth_type "facebook"
+  :oauth_id "0002"
+  :language "English"
+  :timezone 8
+  :no_invite false
+  :block false
+  :contacts []}
+ {:id #uuid "40000000-ecf6-484c-bade-4993662742ba"
+  :name "Tony Parker"
+  :username "tony"
+  :avatar "http://www.blackbluedog.com/wp-content/uploads/2013/05/tony-parker.jpg"
+  :oauth_type "facebook"
+  :oauth_id "0003"
+  :language "English"
+  :timezone 8
+  :no_invite false
+  :block false
+  :contacts []}
+ ;; {:id #uuid "50000000-ecf6-484c-bade-4993662742ba"
+ ;;  :name "Jessica Lee"
+ ;;  :avatar "https://lh3.googleusercontent.com/-UvEve-vvSh4/AAAAAAAAAAI/AAAAAAAARYc/AOkcYItOuPlkUoyD05MAdstLxxO_qwe4fQ/s480-c-mo/photo.jpg"
+ ;;  :oauth_type "facebook"
+ ;;  :oauth_id "0004"
+ ;;  :language "English"
+ ;;  :timezone 8
+ ;;  :location "San Antonio, United States"
+ ;;  :no_match false
+ ;;  :block false
+ ;;  :interests [11 24 29 25 41 38 2 34]
+ ;;  :skills [44 43]
+ ;;  :contacts []}
+ ;; {:id #uuid "11000000-ecf6-484c-bade-4993662742ba"
+ ;;  :name "Fang Yi"
+ ;;  :avatar "https://lh3.googleusercontent.com/zTmuZHAOPqO-0tO4GKon3BjMOX0Cmg-QTW9zJqtBj62re9k6fOt7gGxNmsOYjPBNG1Y5y9VtU9UOcQW9lfdgBpdxlyc=s404-p-k-no"
+ ;;  :oauth_type "facebook"
+ ;;  :oauth_id "0009"
+ ;;  :language "Chinese"
+ ;;  :timezone 8
+ ;;  :location "Langfang"
+ ;;  :no_match false
+ ;;  :block false
+ ;;  :interests [11 24 29 25 41 38 2 34]
+ ;;  :skills [44 43]
+ ;;  :contacts []}
+ ;; {:id #uuid "60000000-ecf6-484c-bade-4993662742ba"
+ ;;  :name "Wang Shanshan"
+ ;;  :avatar "https://pixabay.com/static/uploads/photo/2016/06/18/03/58/chiang-mai-1464535_960_720.jpg"
+ ;;  :oauth_type "facebook"
+ ;;  :oauth_id "0005"
+ ;;  :language "Chinese"
+ ;;  :timezone 8
+ ;;  :location "Kunming"
+ ;;  :no_match false
+ ;;  :block false
+ ;;  :interests [11 24 29 25 41 38 2 34]
+ ;;  :skills [44 43]
+ ;;  :contacts []}
+ ;; {:id #uuid "70000000-ecf6-484c-bade-4993662742ba"
+ ;;  :name "Li Lei"
+ ;;  :avatar "https://pixabay.com/static/uploads/photo/2016/06/01/20/56/student-1429659_960_720.jpg"
+ ;;  :oauth_type "facebook"
+ ;;  :oauth_id "0006"
+ ;;  :language "Chinese"
+ ;;  :timezone 8
+ ;;  :location "Shanghai"
+ ;;  :no_match false
+ ;;  :block false
+ ;;  :interests [11 24 29 25 41 38 2 34]
+ ;;  :skills [44 43]
+ ;;  :contacts []}
+ ;; {:id #uuid "80000000-ecf6-484c-bade-4993662742ba"
+ ;;  :name "Manu Duncan"
+ ;;  :avatar "http://cdn-s3.si.com/s3fs-public/si/multimedia/photo_gallery/1205/tim.duncan.rare.photos/images/duncan-ginobli-parker.jpg"
+ ;;  :oauth_type "facebook"
+ ;;  :oauth_id "0007"
+ ;;  :language "English"
+ ;;  :timezone 8
+ ;;  :location "San Antonio, United States"
+ ;;  :no_match false
+ ;;  :block false
+ ;;  :interests [25 29 38 40 192 11 13]
+ ;;  :skills [42 194]
+ ;;  :contacts []}
+
+ ;; {:id #uuid "90000000-ecf6-484c-bade-4993662742ba"
+ ;;  :name "Hannuri Ha"
+ ;;  :avatar "http://i.cdn.turner.com/drp/nba/spurs/sites/default/files/styles/story_main_photo/public/korean_fans.png?itok=8Kbemsfv"
+ ;;  :oauth_type "facebook"
+ ;;  :oauth_id "0008"
+ ;;  :language "Korean"
+ ;;  :timezone 8
+ ;;  :location "Seoul, South Korea"
+ ;;  :no_match false
+ ;;  :block false
+ ;;  :interests [25 29 38 40 192 11 13]
+ ;;  :skills [194]
+ ;;  :contacts []}
+ ]

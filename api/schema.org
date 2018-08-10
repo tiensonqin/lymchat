@@ -1,0 +1,10 @@
+* Schema
+** LocalStorage
+*** Conversations
+    1. user information
+    2. conversations:tienson
+
+       type: zset
+       score: created_at
+       data: [{:another :last_message :last_message_at, created_at}]
+    3. contacts

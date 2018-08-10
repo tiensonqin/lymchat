@@ -1,0 +1,26 @@
+machine:
+  timezone:
+    Asia/Shanghai
+  java:
+    version: oraclejdk8
+  services:
+    - elasticsearch
+  environment:
+    ENVIRONMENT: ci
+
+database:
+  override:
+    - psql -U ubuntu circle_test < migration/resources/migrations/0000-initial-schema.up.sql.sample
+    - psql -U ubuntu circle_test < resources/sql/init/categories.sql
+    - cd migration && lein migrate
+
+# deployment:
+#   production:
+#     branch: master
+#     commands:
+#       - fab production deploy
+
+  # staging:
+  #   branch: master
+  #   commands:
+  #     - fab stage deploy

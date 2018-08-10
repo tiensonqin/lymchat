@@ -1,0 +1,5 @@
+{:password "密码至少6个字符."
+ :email "邮箱格式不正确."
+ :identity "用户ID不正确."
+ :phone "手机格式不正确."
+ :uid "email或手机格式不正确"}
