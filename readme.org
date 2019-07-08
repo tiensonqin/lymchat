@@ -1,5 +1,4 @@
 * Lymchat
-  [[http://lymchat.com][Learn different cultures.]]
 
 *** Why?
 **** 1. A lot cultures are interesting.
